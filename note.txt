@@ -1,0 +1,69 @@
+CATEGORY
+
+	CREATE 
+	-------
+		URL : http://localhost:8080/category/category
+		METHOD : POST
+		
+		BODY RAW TYPE APPLICATION/JSON :
+			{
+				"categoryId": 2,
+				"modifiedOn": 1509105415000,
+				"modifiedBy": "2",
+				"createdOn": 1509105415000,
+				"createdBy": "2",
+				"categoryType": "2",
+				"categoryName": "2",
+				"categoryCode": "2",
+				"description": "2",
+				"size": 2,
+				"price": 2,
+				"discount": 2
+			}
+	
+	GET ID 
+	-------
+		URL : http://localhost:8080/category/category?id=2
+		METHOD : GET
+	
+	GET ALL
+	-------
+		URL : http://localhost:8080/category/all-categorys
+		METHOD : GET
+	
+	UPDATE
+	-------
+		URL : http://localhost:8080/category/category
+		METHOD : PUT
+		
+		BODY RAW TYPE APPLICATION/JSON :
+			{
+			"categoryId": 2,
+			"modifiedOn": 1509105415000,
+			"modifiedBy": "222",
+			"createdOn": 1509105415000,
+			"createdBy": "222",
+			"categoryType": "2",
+			"categoryName": "22222",
+			"categoryCode": "22",
+			"description": "22222222",
+			"size": 2,
+			"price": 2,
+			"discount": 2
+		}
+		
+	DELETE
+	-------
+		URL : http://localhost:8080/category/category?id=2
+		METHOD : DELETE
+	
+	
+	npm install jsdom
+
+	ng g m masterdata/category --routing
+
+	ng g c masterdata/category
+	
+	
+	http://localhost:4200/#/tables/datatables
+	
