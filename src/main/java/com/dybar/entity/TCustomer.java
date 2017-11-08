@@ -30,7 +30,7 @@ public class TCustomer implements java.io.Serializable {
 	private String identityType;
 	private String identityNumber;
 	private String reference;
-	private BigDecimal numeric;
+	private BigDecimal deposite;
 
 	public TCustomer() {
 	}
@@ -42,7 +42,7 @@ public class TCustomer implements java.io.Serializable {
 	public TCustomer(BigDecimal customerId, Date modifiedOn, String modifiedBy, Date createdOn, String createdBy,
 			String customerName, Date birthdate, BigDecimal customerAge, String clientAddress, String postalCode,
 			String phoneNumber, String email, String identityType, String identityNumber, String reference,
-			BigDecimal numeric) {
+			BigDecimal deposite) {
 		this.customerId = customerId;
 		this.modifiedOn = modifiedOn;
 		this.modifiedBy = modifiedBy;
@@ -58,7 +58,7 @@ public class TCustomer implements java.io.Serializable {
 		this.identityType = identityType;
 		this.identityNumber = identityNumber;
 		this.reference = reference;
-		this.numeric = numeric;
+		this.deposite = deposite;
 	}
 
 	@Id
@@ -201,13 +201,13 @@ public class TCustomer implements java.io.Serializable {
 		this.reference = reference;
 	}
 
-	@Column(name = "numeric", precision = 65535, scale = 65531)
-	public BigDecimal getNumeric() {
-		return this.numeric;
+	@Column(name = "deposite", precision = 65535, scale = 65531)
+	public BigDecimal getDeposite() {
+		return this.deposite;
 	}
 
-	public void setNumeric(BigDecimal numeric) {
-		this.numeric = numeric;
+	public void setDeposite(BigDecimal deposite) {
+		this.deposite = deposite;
 	}
 
 }
