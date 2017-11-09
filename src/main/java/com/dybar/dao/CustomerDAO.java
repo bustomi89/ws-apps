@@ -21,7 +21,7 @@ public class CustomerDAO implements ICustomerDAO {
 	@Override
 	public List<TCustomer> getAllCustomer() {
 		// TODO Auto-generated method stub
-		String hql = "FROM t_customer as mc ORDER BY mc.customer_id DESC";
+		String hql = "FROM TCustomer as mc ORDER BY mc.customerId DESC";
 		return (List<TCustomer>) entityManager.createQuery(hql).getResultList();
 	}
 	
@@ -68,7 +68,7 @@ public class CustomerDAO implements ICustomerDAO {
 
 	@Override
 	public boolean CustomerExists(BigDecimal CustomerId) {
-		String hql = "FROM t_customer as mc WHERE mc.customer_id = ? ";
+		String hql = "FROM TCustomer as mc WHERE mc.customerId = ? ";
 		int count = entityManager.createQuery(hql).setParameter(1, CustomerId)
 		              .getResultList().size();
 		return count > 0 ? true : false;

@@ -22,7 +22,7 @@ public class DoctorDAO implements IDoctorDAO {
 	@Override
 	public List<MDoctor> getAllDoctor() {
 		// TODO Auto-generated method stub
-		String hql = "FROM m_doctor as mc ORDER BY mc.doctor_id DESC";
+		String hql = "FROM MDoctor as mc ORDER BY mc.doctorId DESC";
 		return (List<MDoctor>) entityManager.createQuery(hql).getResultList();
 	}
 	
@@ -64,7 +64,7 @@ public class DoctorDAO implements IDoctorDAO {
 
 	@Override
 	public boolean DoctorExists(BigDecimal DoctorId, String DoctorCode) {
-		String hql = "FROM m_doctor as mc WHERE mc.doctor_id = ? and mc.doctor_code = ?";
+		String hql = "FROM MDoctor as mc WHERE mc.doctorId = ? and mc.doctorCode = ?";
 		int count = entityManager.createQuery(hql).setParameter(1, DoctorId)
 		              .setParameter(2, DoctorCode).getResultList().size();
 		return count > 0 ? true : false;

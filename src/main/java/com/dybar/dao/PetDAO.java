@@ -20,7 +20,7 @@ public class PetDAO implements IPetDAO {
 	@Override
 	public List<TPet> getAllPet() {
 		// TODO Auto-generated method stub
-		String hql = "FROM t_pet as mc ORDER BY mc.pet_id DESC";
+		String hql = "FROM TPet as mc ORDER BY mc.petId DESC";
 		return (List<TPet>) entityManager.createQuery(hql).getResultList();
 	}
 	
@@ -64,7 +64,7 @@ public class PetDAO implements IPetDAO {
 
 	@Override
 	public boolean PetExists(BigDecimal PetId) {
-		String hql = "FROM t_pet as mc WHERE mc.pet_id = ? ";
+		String hql = "FROM TPet as mc WHERE mc.petId = ? ";
 		int count = entityManager.createQuery(hql).setParameter(1, PetId)
 		              .getResultList().size();
 		return count > 0 ? true : false;
