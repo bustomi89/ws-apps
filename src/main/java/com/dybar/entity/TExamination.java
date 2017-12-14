@@ -3,7 +3,10 @@ import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -15,6 +18,11 @@ import javax.persistence.TemporalType;
 @Table(name = "t_examination", schema = "public")
 public class TExamination implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private BigDecimal examId;
 	private Date modifiedOn;
 	private String modifiedBy;
@@ -29,6 +37,7 @@ public class TExamination implements java.io.Serializable {
 	private BigDecimal respRate;
 	private String indexBody;
 	private String note;
+	private BigDecimal customerType;
 
 	public TExamination() {
 	}
@@ -56,9 +65,14 @@ public class TExamination implements java.io.Serializable {
 		this.note = note;
 	}
 
-	@Id
+//	@Id
+//	@Column(name = "exam_id", unique = true, nullable = false, precision = 65535, scale = 65531)
 
-	@Column(name = "exam_id", unique = true, nullable = false, precision = 65535, scale = 65531)
+	@Id
+	@Column(name="exam_id", unique = true, nullable = false)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="t_examination_seq_id")
+	@SequenceGenerator(name="t_examination_seq_id",sequenceName="t_examination_seq",allocationSize=1)
+//	@Column(name = "category_id", unique = true, nullable = false, precision = 65535, scale = 65531)
 	public BigDecimal getExamId() {
 		return this.examId;
 	}
@@ -184,6 +198,15 @@ public class TExamination implements java.io.Serializable {
 
 	public void setNote(String note) {
 		this.note = note;
+	}
+	
+	@Column(name = "customer_type")
+	public BigDecimal getCustomerType() {
+		return customerType;
+	}
+
+	public void setCustomerType(BigDecimal customerType) {
+		this.customerType = customerType;
 	}
 
 }

@@ -15,6 +15,10 @@ import javax.persistence.TemporalType;
 @Table(name = "t_treatment_detail", schema = "public")
 public class TTreatmentDetail implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private BigDecimal treatmentDetailId;
 	private Date modifiedOn;
 	private String modifiedBy;
