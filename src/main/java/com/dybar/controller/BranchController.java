@@ -23,7 +23,7 @@ import com.dybar.service.IBranchService;
 
 @Controller
 @RequestMapping("branch")
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"*"})
 public class BranchController {
 	
 	@Autowired

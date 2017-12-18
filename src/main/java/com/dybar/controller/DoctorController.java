@@ -22,7 +22,8 @@ import com.dybar.service.IDoctorService;
 
 @Controller
 @RequestMapping("doctor")
-@CrossOrigin(origins = {"http://localhost:4200"})
+//@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"*"})
 public class DoctorController {
 	
 	@Autowired

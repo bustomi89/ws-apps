@@ -3,7 +3,10 @@ import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -48,8 +51,9 @@ public class TExaminationTest implements java.io.Serializable {
 	}
 
 	@Id
-
-	@Column(name = "test_id", unique = true, nullable = false, precision = 65535, scale = 65531)
+	@Column(name="test_id", unique = true, nullable = false)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="t_examination_seq_id")
+	@SequenceGenerator(name="t_examination_seq_id",sequenceName="t_examination_test_seq",allocationSize=1)
 	public BigDecimal getTestId() {
 		return this.testId;
 	}

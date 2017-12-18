@@ -22,7 +22,8 @@ import com.dybar.service.IPetService;
 
 @Controller
 @RequestMapping("pet")
-@CrossOrigin(origins = {"http://localhost:4200"})
+//@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"*"})
 public class PetController {
 	
 	@Autowired

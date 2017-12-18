@@ -22,7 +22,7 @@ import com.dybar.service.TExaminationDetailService;
 
 @Controller
 @RequestMapping("exam-detail")
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"*"})
 public class TExaminationDetailController {
 	
 	@Autowired
