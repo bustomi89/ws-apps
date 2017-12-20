@@ -22,7 +22,7 @@ import com.dybar.service.TTreatmentDetailService;
 
 @Controller
 @RequestMapping("treatment")
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"*"})
 public class TTreatmentDetailController {
 	
 	@Autowired

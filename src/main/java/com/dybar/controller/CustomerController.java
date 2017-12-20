@@ -22,7 +22,8 @@ import com.dybar.service.ICustomerService;
 
 @Controller
 @RequestMapping("customer")
-@CrossOrigin(origins = {"http://localhost:4200"})
+//@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"*"})
 public class CustomerController {
 	
 	@Autowired

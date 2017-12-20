@@ -21,7 +21,7 @@ import com.dybar.service.IArticleService;
 
 @Controller
 @RequestMapping("user")
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"*"})
 public class ArticleController {
 	@Autowired
 	private IArticleService articleService;

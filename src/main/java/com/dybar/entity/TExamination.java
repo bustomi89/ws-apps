@@ -38,6 +38,8 @@ public class TExamination implements java.io.Serializable {
 	private String indexBody;
 	private String note;
 	private BigDecimal customerType;
+	private BigDecimal doctorId;
+
 
 	public TExamination() {
 	}
@@ -207,6 +209,15 @@ public class TExamination implements java.io.Serializable {
 
 	public void setCustomerType(BigDecimal customerType) {
 		this.customerType = customerType;
+	}
+	
+	@Column(name = "doctor_id")
+	public BigDecimal getDoctorId() {
+		return doctorId;
+	}
+
+	public void setDoctorId(BigDecimal doctorId) {
+		this.doctorId = doctorId;
 	}
 
 }

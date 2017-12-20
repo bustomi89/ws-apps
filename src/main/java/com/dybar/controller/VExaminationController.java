@@ -16,7 +16,7 @@ import com.dybar.service.VExaminationService;
 
 @Controller
 @RequestMapping("vtransaction")
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"*"})
 public class VExaminationController {
 	
 	@Autowired

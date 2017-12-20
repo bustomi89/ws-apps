@@ -4,12 +4,15 @@ import javax.annotation.Resource;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
+//import org.springframework.boot.builder.SpringApplicationBuilder;
+//import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 import com.dybar.utility.upload.storage.StorageService;
+
 @SpringBootApplication
-public class MyApplication extends SpringBootServletInitializer{  
+public class MyApplication{  
+	
+//public class MyApplication extends SpringBootServletInitializer{  
 	
 
 	@Resource
@@ -19,12 +22,12 @@ public class MyApplication extends SpringBootServletInitializer{
 		SpringApplication.run(MyApplication.class, args);
     }       
 	
-	@Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(MyApplication.class);
-        
-        
-    }
+//	@Override
+//    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+//        return application.sources(MyApplication.class);
+//        
+//        
+//    }
 	
 	public void run(String... arg) throws Exception {
 		//storageService.deleteAll();

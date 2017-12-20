@@ -50,8 +50,6 @@ public class TExaminationDetail implements java.io.Serializable {
 	@Column(name="exam_detail_id", unique = true, nullable = false)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="t_examination_detail_seq_id")
 	@SequenceGenerator(name="t_examination_detail_seq_id",sequenceName="t_examination_detail_seq",allocationSize=1)
-//	@Id
-//	@Column(name = "exam_detail_id", unique = true, nullable = false, precision = 65535, scale = 65531)
 	public BigDecimal getExamDetailId() {
 		return this.examDetailId;
 	}
