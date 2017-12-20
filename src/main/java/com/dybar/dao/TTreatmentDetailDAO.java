@@ -26,6 +26,13 @@ public class TTreatmentDetailDAO implements ITTreatmentDetailDAO {
 	}
 	
 	@Override
+	public List<TTreatmentDetail> getTreatmentDetailByTreatmentId(BigDecimal TreatmentId) {
+		String hql = "FROM TTreatmentDetail as mc WHERE mc.treatmentId=? ORDER BY mc.treatmentDetailId DESC";
+		
+		return (List<TTreatmentDetail>) entityManager.createQuery(hql).setParameter(1, TreatmentId).getResultList();
+	}	
+	
+	@Override
 	public TTreatmentDetail getTreatmentDetailById(BigDecimal TreatmentDetailId) {
 		// TODO Auto-generated method stub
 		return entityManager.find(TTreatmentDetail.class, TreatmentDetailId);
@@ -68,6 +75,8 @@ public class TTreatmentDetailDAO implements ITTreatmentDetailDAO {
 		String hql = "FROM TTreatmentDetail as mc WHERE mc.treatmentDetailId = ?";
 		int count = entityManager.createQuery(hql).setParameter(1, TreatmentDetailId).getResultList().size();
 		return count > 0 ? true : false;
-	}	
+	}
+
+	
 	
 }

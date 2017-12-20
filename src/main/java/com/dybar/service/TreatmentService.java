@@ -28,12 +28,12 @@ public class TreatmentService implements ITreatmentService{
 
 
 	@Override
-	public boolean createTreatment(TTreatment treatment) {
+	public TTreatment createTreatment(TTreatment treatment) {
 	       if (treatmentDAO.TreatmentExists(treatment.getTreatmentId())) {
-	    	   return false;
+	    	   return treatment;
 	       } else {
-	    	   treatmentDAO.createTreatment(treatment);
-	    	   return true;
+//	    	   treatmentDAO.createTreatment(treatment);
+	    	   return treatmentDAO.createTreatment(treatment);
 	       }
 	}
 

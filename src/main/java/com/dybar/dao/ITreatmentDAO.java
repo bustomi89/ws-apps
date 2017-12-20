@@ -8,7 +8,7 @@ import com.dybar.entity.TTreatment;;
 public interface ITreatmentDAO {
     List<TTreatment> getAllTreatment();
     TTreatment getTreatmentById(BigDecimal TreatmentId);
-    void createTreatment(TTreatment Treatment);
+    TTreatment createTreatment(TTreatment Treatment);
     void updateTreatment(TTreatment Treatment);
     void deleteTreatment(BigDecimal TreatmentId);
     

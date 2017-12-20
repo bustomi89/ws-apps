@@ -16,4 +16,6 @@ public interface ITTreatmentDetailService {
      void updateTreatmentDetail(TTreatmentDetail TreatmentDetail);
      
      void deleteTreatmentDetail(BigDecimal TreatmentDetailId);
+
+	List<TTreatmentDetail> getTreatmentDetailByTreatmentId(BigDecimal TreatmentId);
 }

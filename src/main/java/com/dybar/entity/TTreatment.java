@@ -3,7 +3,10 @@ import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -15,6 +18,10 @@ import javax.persistence.TemporalType;
 @Table(name = "t_treatment", schema = "public")
 public class TTreatment implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private BigDecimal treatmentId;
 	private Date modifiedOn;
 	private String modifiedBy;
@@ -46,8 +53,10 @@ public class TTreatment implements java.io.Serializable {
 	}
 
 	@Id
-
-	@Column(name = "treatment_id", unique = true, nullable = false, precision = 65535, scale = 65531)
+	@Column(name="treatment_id", unique = true, nullable = false)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="t_treatment_seq_id")
+	@SequenceGenerator(name="t_treatment_seq_id",sequenceName="t_treatment_seq",allocationSize=1)
+//	@Column(name = "treatment_id", unique = true, nullable = false, precision = 65535, scale = 65531)
 	public BigDecimal getTreatmentId() {
 		return this.treatmentId;
 	}

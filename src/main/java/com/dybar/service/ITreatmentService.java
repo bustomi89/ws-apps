@@ -11,7 +11,7 @@ public interface ITreatmentService {
 	 
 	 List<TTreatment> getAllTreatment();
      
-     boolean createTreatment(TTreatment treatment);
+	 TTreatment createTreatment(TTreatment treatment);
      
      void updateTreatment(TTreatment treatment);
      

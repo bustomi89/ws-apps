@@ -31,9 +31,10 @@ public class TreatmentDAO implements ITreatmentDAO {
 	}
 
 	@Override
-	public void createTreatment(TTreatment Treatment) {
+	public TTreatment createTreatment(TTreatment Treatment) {
 		// TODO Auto-generated method stub
 		entityManager.persist(Treatment);
+		return Treatment;
 		
 	}
 

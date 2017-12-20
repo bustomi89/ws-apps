@@ -21,6 +21,12 @@ public class TTreatmentDetailService implements ITTreatmentDetailService {
 	}
 	
 	@Override
+	public List<TTreatmentDetail> getTreatmentDetailByTreatmentId(BigDecimal TreatmentId) {
+		
+		return TreatmentDAO.getTreatmentDetailByTreatmentId(TreatmentId);
+	}
+	
+	@Override
 	public List<TTreatmentDetail> getAllTreatmentDetails() {
 		// TODO Auto-generated method stub
 		return TreatmentDAO.getAllTreatmentDetails();

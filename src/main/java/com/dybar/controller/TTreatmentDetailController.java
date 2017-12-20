@@ -36,9 +36,16 @@ public class TTreatmentDetailController {
 	}
 	
 	//getAll MTreatments
+//	@GetMapping("all-treatment-detail")
+//	public ResponseEntity<List<TTreatmentDetail>> getAllMTreatments() {
+//		List<TTreatmentDetail> list = TreatmentService.getAllTreatmentDetails();
+//		return new ResponseEntity<List<TTreatmentDetail>>(list, HttpStatus.OK);
+//	}
+	
+	//getAll MTreatments
 	@GetMapping("all-treatment-detail")
-	public ResponseEntity<List<TTreatmentDetail>> getAllMTreatments() {
-		List<TTreatmentDetail> list = TreatmentService.getAllTreatmentDetails();
+	public ResponseEntity<List<TTreatmentDetail>> getTreatmentDetailByTreatmentId(@RequestParam("id") BigDecimal TreatmentId) {
+		List<TTreatmentDetail> list = TreatmentService.getTreatmentDetailByTreatmentId(TreatmentId);
 		return new ResponseEntity<List<TTreatmentDetail>>(list, HttpStatus.OK);
 	}
 	
